@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Wallet } from 'lucide-react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export function Header() {
   return (
@@ -21,10 +20,7 @@ export function Header() {
             <span className="gradient-text">Onchain</span> Todo
           </h1>
         </div>
-        <Button variant="gradient" className="gap-2">
-          <Wallet className="w-4 h-4" />
-          Connect Wallet
-        </Button>
+        <ConnectButton chainStatus="icon" showBalance={false} />
       </div>
     </motion.header>
   );
