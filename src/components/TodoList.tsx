@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Loader2 } from 'lucide-react';
+import { useAccount } from 'wagmi';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { TodoItem, type Todo } from './TodoItem';
 
 export function TodoList() {
-  const [isConnected] = useState(false);
+  const { isConnected } = useAccount();
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState('');
   const [isAdding, setIsAdding] = useState(false);
